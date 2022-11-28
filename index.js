@@ -2,8 +2,14 @@ const express = require("express");
 const app = express();
 
 const opensslTools = require("openssl-cert-tools");
+const openssl = require("openssl-nodejs");
 
 const { exec } = require("child_process");
+
+const spawn = require("child_process").spawn;
+const productionEnv = Object.create(process.env);
+productionEnv.NODE_ENV = "production";
+spawn("node", ["app.js"], { env: productionEnv });
 
 app.use(express.json());
 
