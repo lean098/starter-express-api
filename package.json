@@ -17,8 +17,6 @@
   },
   "homepage": "https://github.com/cyclic-software/starter-express-api#readme",
   "dependencies": {
-    "express": "^4.17.1",
-    "openssl-cert-tools": "^1.4.3",
-    "openssl-nodejs": "^1.0.5"
+    "express": "^4.17.1"
   }
 }
