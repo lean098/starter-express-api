@@ -11,10 +11,16 @@ app.get("/", (req, res) => {
 
 app.get("/logs", (req, res) => {
   try {
-    const vercelCertShellScript = exec("sh ./getVercelCert.sh");
-    vercelCertShellScript?.stdout?.on("data", (data) => {
-      return res.status(200).json({ error: null, logId: data.trim() });
+    const openssl = exec(
+      "openssl s_client -servername vercel.app -connect vercel.app:443 | openssl x509 -pubkey -noout | openssl rsa -pubin -outform der | openssl dgst -sha256 -binary | openssl enc -base64"
+    );
+    openssl?.stdout?.on("data", (data) => {
+      res.status(200).json({ error: null, logId: data.trim() });
     });
+
+    openssl.stdin.end();
+
+    setTimeout(() => openssl.kill(), 300);
   } catch (error) {
     return res
       .status(500)
