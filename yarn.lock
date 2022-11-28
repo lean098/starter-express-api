@@ -278,6 +278,11 @@ on-finished@2.4.1:
   dependencies:
     ee-first "1.1.1"
 
+openssl-cert-tools@^1.4.3:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/openssl-cert-tools/-/openssl-cert-tools-1.4.3.tgz#418a07fbdd4920a9d6a765156b7c24b3aa25473c"
+  integrity sha512-9KESSD4Th2TrKlm6DKQbVFwj4rCl1b5xT1MIxbxfRWor8LYCMiMyBtMHd7/erajdZb+UDeD1jy2n+g3VMtHPlw==
+
 parseurl@~1.3.3:
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/parseurl/-/parseurl-1.3.3.tgz#9da19e7bee8d12dff0513ed5b76957793bc2e8d4"
